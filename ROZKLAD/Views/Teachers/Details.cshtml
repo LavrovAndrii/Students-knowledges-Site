@@ -1,0 +1,58 @@
+﻿@model ROZKLAD.Models.DbEntities.Teacher
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2></h2>
+
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           Прізвище
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SureName)
+        </dd>
+
+        <dt>Ім'я
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+         По батькові
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Father)
+        </dd>
+
+        <dt>
+          Пароль
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            Email
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Редагувати", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Назад", "Index")
+</p>

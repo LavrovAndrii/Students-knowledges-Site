@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ROZKLAD.Models.DbEntities.Ocinka>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_SignOut.cshtml";
+}
+
+<h2>Електронний журнал викладача</h2>
+
+<p>
+    @Html.ActionLink("Поставити нову оцінку", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Номер уроку
+        </th>
+        <th>
+            Студент
+        </th>
+        <th>
+            Оцінка
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lessons.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Students.SureName) @Html.DisplayFor(modelItem => item.Students.Name) @Html.DisplayFor(modelItem => item.Students.Father)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mark)
+        </td>
+
+        <td>
+            @Html.ActionLink("Редагувати", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Видалити", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

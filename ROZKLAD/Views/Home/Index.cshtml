@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "~/Views/Shared/_Others.cshtml";
+}
+
+
+
+
+
+
+<form>
+    <table align="center" cellspacing="2" cellpadding="2" border="0" width="320">
+        <h2  align="center">Авторизація</h2>
+        <tr>
+            <td width="100">Имя:</td>
+            <td width="200"><input type="text" name="name" /></td>
+        </tr>
+        <tr>
+            <td width="100">Пароль:</td>
+            <td width="200"><input type="password" name="pass" /></td>
+        </tr>
+        <tr>
+            <td colspan="2" width="300" align="center">
+                <br>
+                <button> @Html.ActionLink("Ввійти", "Autorization", "Home") </button>
+            </td>
+        </tr>
+        
+    </table>
+</form>
+<br>
+<img width="100%" align="center" src="~/Content/themes/students.jpg" />

@@ -1,0 +1,65 @@
+﻿@model ROZKLAD.Models.DbEntities.Teacher
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2></h2>
+
+<h3>Видалити викладача?</h3>
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Прізвище
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SureName)
+        </dd>
+
+        <dt>
+            Ім'я
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            По батькові
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Father)
+        </dd>
+
+        <dt>
+           Пароль
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            Email
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Видалити" class="btn btn-default" /> |
+            @Html.ActionLink("Назад", "Index")
+        </div>
+    }
+</div>

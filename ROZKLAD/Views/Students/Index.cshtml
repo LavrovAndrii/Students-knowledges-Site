@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ROZKLAD.Models.DbEntities.Student>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2></h2>
+
+<p>
+    @Html.ActionLink("Додати нового студента", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Група
+        </th>
+        <th>
+            Прізвище
+        </th>
+        <th>
+           Ім'я
+        </th>
+        <th>
+           По батькові
+        </th>
+        <th>
+            Пароль
+        </th>
+        <th>
+            Email
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Groups.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SureName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Father)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.ActionLink("Редагувати", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Детальніше", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Видалити", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

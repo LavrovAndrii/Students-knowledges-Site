@@ -1,0 +1,33 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Успішність студентів</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" align="right">
+        <div>
+            <ul class="nav  right">
+                <li>@Html.ActionLink("Вийти", "Index", "Home")</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p align="center">&copy; @DateTime.Now.Year - КОНСОЛІДОВАНИЙ ІНФОРМАЦІЙНИЙ РЕСУРС КОНТРОЛЮ ОЦІНЮВАННЯ ЗНАНЬ СТУДЕНТІВ ВНЗ</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+

@@ -1,0 +1,43 @@
+﻿@model ROZKLAD.Models.DbEntities.Ocinka
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2></h2>
+
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Номер уроку
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lessons.Id)
+        </dd>
+
+        <dt>
+            Студент
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Students.SureName) @Html.DisplayFor(model => model.Students.Name) @Html.DisplayFor(model => model.Students.Father)
+        </dd>
+
+        <dt>
+            Оцінка
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mark)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Редагувати", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Назад", "Index")
+</p>

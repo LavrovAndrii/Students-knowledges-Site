@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Успішність студентів</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Успішність студентів", "Global", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Додати</a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Групу", "Create", "Groups")</li>
+                            <li>@Html.ActionLink("Дисципліну", "Create", "Subjects")</li>
+                            <li>@Html.ActionLink("Викладача", "Create", "Teachers")</li>
+                            <li>@Html.ActionLink("Студента", "Create", "Students")</li>
+                            <li>@Html.ActionLink("Успішність", "Create", "Ocinkas")</li>
+                            <li>@Html.ActionLink("Заняття", "Create", "Lessons")</li>
+                            <li>@Html.ActionLink("Робочі дні", "Create", "Days")</li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Перегляд інформації</a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Групи", "Index", "Groups")</li>
+                            <li>@Html.ActionLink("Дисципліни", "Index", "Subjects")</li>
+                            <li>@Html.ActionLink("Викладачі", "Index", "Teachers")</li>
+                            <li>@Html.ActionLink("Студенти", "Index", "Students")</li>
+                            <li>@Html.ActionLink("Успішність", "Index", "Ocinkas")</li>
+                            <li>@Html.ActionLink("Заняття", "Index", "Lessons")</li>
+                            <li>@Html.ActionLink("Робочих днів", "Index", "Days")</li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Звіти</a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Рейтинг оцінок", "RatesMarks", "Reports")</li>
+                            <li>@Html.ActionLink("Рейтинг викладачів", "RatesTeachers", "Reports")</li>
+                            <li>@Html.ActionLink("Рейтинг оцінок", "RatesMarks", "Reports")</li>
+
+                        </ul>
+                    </li>
+
+                    <li>@Html.ActionLink("Вийти", "Index", "Home")</li></ul>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - КОНСОЛІДОВАНИЙ ІНФОРМАЦІЙНИЙ РЕСУРС КОНТРОЛЮ ОЦІНЮВАННЯ ЗНАНЬ СТУДЕНТІВ ВНЗ</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+

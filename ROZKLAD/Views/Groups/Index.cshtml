@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ROZKLAD.Models.DbEntities.Group>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2></h2>
+
+<p>
+    @Html.ActionLink("Створити нову групу", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           Назва групи
+        </th>
+        <th>
+           Рік вступу
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Year)
+        </td>
+        <td>
+            @Html.ActionLink("Редагувати", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Видалити", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

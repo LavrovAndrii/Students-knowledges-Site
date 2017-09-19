@@ -1,0 +1,49 @@
+﻿@model ROZKLAD.Models.DbEntities.Ocinka
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_SignOut.cshtml";
+}
+
+
+
+<h3>Видалити цю оцінку?</h3>
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           Номер уроку
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lessons.Id)
+        </dd>
+
+        <dt>
+            Студент
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(modelItem => Model.Students.SureName) @Html.DisplayFor(modelItem => Model.Students.Name) @Html.DisplayFor(modelItem => Model.Students.Father)
+        </dd>
+
+        <dt>
+            Оцінка
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mark)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Видалити" class="btn btn-default" /> |
+            @Html.ActionLink("Назад", "Index")
+        </div>
+    }
+</div>

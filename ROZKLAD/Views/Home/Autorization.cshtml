@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Autorization";
+    Layout = "~/Views/Shared/_Others.cshtml";
+}
+
+<h2 align="center">Аутентифікація</h2>
+
+<fieldset align="center" cellspacing="2" cellpadding="2" border="0" width="320">
+    <legend align="center" cellspacing="2" cellpadding="2" border="0" width="320">Ви входите як:</legend>
+    <button> @Html.ActionLink("Викладач", "Create", "TeachersView") </button> 
+    <button> @Html.ActionLink("Студент", "Index", "StudentView") </button> 
+    <button> @Html.ActionLink("Адмінстратор", "Index", "AdministratorView") </button> 
+</fieldset>
+
